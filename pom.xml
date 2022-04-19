@@ -46,7 +46,7 @@
     </dependencies>
 
     <build>
-        <finalName>security-springmvc</finalName>
+        <finalName>security-spring-security</finalName>
         <pluginManagement>
             <plugins>
                 <plugin>
