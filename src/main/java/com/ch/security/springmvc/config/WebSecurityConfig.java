@@ -45,9 +45,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        //权限访问拦截
         //所有/r/**的请求要认证通过，其他的请求放行
         //允许表单登录,成功后返回loginSuccess地址
         http.authorizeRequests()
+                .antMatchers("/r/r1").hasAuthority("p1")
+                .antMatchers("/r/r2").hasAuthority("p2")
                 .antMatchers("/r/**").authenticated()
                 .anyRequest().permitAll()
                 .and()
